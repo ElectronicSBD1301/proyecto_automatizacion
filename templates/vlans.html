@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}VLANs{% endblock %}
+
+{% block content %}
+<h2>VLANs Existentes</h2>
+{% for info in vlan_info %}
+  <h3>Switch: {{ info.host }}</h3>
+  <pre>{{ info.output }}</pre>
+{% endfor %}
+{% endblock %}

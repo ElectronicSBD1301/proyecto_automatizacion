@@ -1,0 +1,17 @@
+[
+    {
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.1.1",
+      "username": "admin",
+      "password": "tu_contraseña",
+      "secret": "tu_secret"
+    },
+    {
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.1.2",
+      "username": "admin",
+      "password": "tu_contraseña",
+      "secret": "tu_secret"
+    }
+  ]
+  

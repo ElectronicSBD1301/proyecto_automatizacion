@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Backups{% endblock %}
+
+{% block content %}
+<h2>Archivos de Backups</h2>
+<ul>
+  {% for file in backup_files %}
+    <li>
+      <a href="{{ url_for('static', filename='backups/' + file) }}">
+        {{ file }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

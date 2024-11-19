@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Asignar VLAN{% endblock %}
+
+{% block content %}
+<h2>Asignar VLAN a Puerto</h2>
+<form method="post">
+  <label for="vlan_id">ID de VLAN:</label>
+  <input type="text" name="vlan_id" id="vlan_id" required>
+  <br>
+  <label for="port">Puerto:</label>
+  <input type="text" name="port" id="port" required>
+  <br>
+  <button type="submit">Asignar VLAN</button>
+</form>
+{% endblock %}

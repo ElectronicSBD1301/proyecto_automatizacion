@@ -1,16 +1,66 @@
+<!-- templates/assign_vlan.html -->
+
 {% extends "base.html" %}
 
-{% block title %}Asignar VLAN{% endblock %}
+{% block title %}Asignar VLAN - Gestión de VLANs{% endblock %}
 
 {% block content %}
-<h2>Asignar VLAN a Puerto</h2>
-<form method="post">
-  <label for="vlan_id">ID de VLAN:</label>
-  <input type="text" name="vlan_id" id="vlan_id" required>
-  <br>
-  <label for="port">Puerto:</label>
-  <input type="text" name="port" id="port" required>
-  <br>
-  <button type="submit">Asignar VLAN</button>
+<h2>Asignar VLAN a Puerto en modo Aceeso</h2>
+<form method="post" class="needs-validation" novalidate>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="vlan_id" class="form-label">ID de VLAN</label>
+            <input type="number" class="form-control" id="vlan_id" name="vlan_id" placeholder="Ejemplo: 65" required>
+            <div class="invalid-feedback">
+                Por favor, ingresa un ID de VLAN válido.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="switch" class="form-label">Selecciona el Switch</label>
+            <select class="form-select" id="switch" name="switch" required>
+                <option value="" disabled selected>--Selecciona el Switch--</option>
+                {% for switch in switches %}
+                    <option value="{{ switch.host }}">{{ switch.host }}</option>
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Por favor, selecciona un switch.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="port" class="form-label">Selecciona el Puerto</label>
+        <select class="form-select" id="port" name="port" required>
+            <option value="" disabled selected>--Selecciona el Puerto--</option>
+            <option value="Ethernet0/0">Ethernet0/0</option>
+            <option value="Ethernet0/1">Ethernet0/1</option>
+            <option value="Ethernet0/2">Ethernet0/2</option>
+            <option value="Ethernet0/3">Ethernet0/3</option>
+        </select>
+        <div class="invalid-feedback">
+            Por favor, selecciona un puerto.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Asignar VLAN</button>
 </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+(function () {
+  'use strict'
+  var forms = document.querySelectorAll('.needs-validation')
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 {% endblock %}

@@ -29,7 +29,7 @@ for switch in switches:
         output = net_connect.send_command('show running-config')
         
         # Crear el nombre del archivo de backup con formato legible
-        filename = f"{backup_dir}{hostname}_{fecha}.cfg"
+        filename = f"{hostname}_{fecha}.cfg"
         with open(filename, 'w') as file:
             file.write(output)
         net_connect.disconnect()

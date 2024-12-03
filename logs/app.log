@@ -792,3 +792,11 @@ SW18#
 2024-11-20 11:00:12,452 INFO: Aplicación iniciada
 2024-11-20 11:01:31,090 INFO: Aplicación iniciada
 2024-11-20 11:01:31,233 INFO: Aplicación iniciada
+2024-12-03 10:03:47,831 INFO: Aplicación iniciada
+2024-12-03 10:03:49,198 INFO: Aplicación iniciada
+2024-12-03 10:05:47,511 ERROR: Error al obtener VLANs de 192.168.100.121: timed out
+2024-12-03 10:05:54,196 ERROR: Error al obtener VLANs de 192.168.100.121: timed out
+2024-12-03 10:06:00,646 ERROR: Error al obtener VLANs de 192.168.100.121: timed out
+2024-12-03 10:06:46,114 ERROR: Error al agregar VLAN en 192.168.100.121: timed out
+2024-12-03 10:08:02,743 INFO: Aplicación iniciada
+2024-12-03 10:08:10,210 INFO: Aplicación iniciada

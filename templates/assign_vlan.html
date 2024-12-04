@@ -5,40 +5,41 @@
 {% block title %}Asignar VLAN - Gestión de VLANs{% endblock %}
 
 {% block content %}
-<h2>Asignar VLAN a Puerto en modo Aceeso</h2>
+<h2>Asignar VLAN a interfaz en modo de acceso</h2>
 <form method="post" class="needs-validation" novalidate>
     <div class="row mb-3">
         <div class="col-md-6">
             <label for="vlan_id" class="form-label">ID de VLAN</label>
             <input type="number" class="form-control" id="vlan_id" name="vlan_id" placeholder="Ejemplo: 65" required>
             <div class="invalid-feedback">
-                Por favor, ingresa un ID de VLAN válido.
+                Debe ingresar un ID de VLAN válido.
             </div>
         </div>
         <div class="col-md-6">
-            <label for="switch" class="form-label">Selecciona el Switch</label>
+            <label for="switch" class="form-label">Seleccione el switch</label>
             <select class="form-select" id="switch" name="switch" required>
-                <option value="" disabled selected>--Selecciona el Switch--</option>
+                <option value="" disabled selected>--Seleccione el switch--</option>
                 {% for switch in switches %}
                     <option value="{{ switch.host }}">{{ switch.host }}</option>
                 {% endfor %}
             </select>
             <div class="invalid-feedback">
-                Por favor, selecciona un switch.
+                Debe seleccionar un switch.
             </div>
         </div>
     </div>
     <div class="mb-3">
-        <label for="port" class="form-label">Selecciona el Puerto</label>
+        <label for="port" class="form-label">Seleccione la interfaz</label>
         <select class="form-select" id="port" name="port" required>
-            <option value="" disabled selected>--Selecciona el Puerto--</option>
+           <!-- Cambiar formulario para que se muestren todas las interfaces del equipo seleccionado. -->
+            <option value="" disabled selected>--Seleccione la interfaz--</option  ption>
             <option value="Ethernet0/0">Ethernet0/0</option>
             <option value="Ethernet0/1">Ethernet0/1</option>
             <option value="Ethernet0/2">Ethernet0/2</option>
             <option value="Ethernet0/3">Ethernet0/3</option>
         </select>
         <div class="invalid-feedback">
-            Por favor, selecciona un puerto.
+            Debe seleccionar una interfaz.
         </div>
     </div>
     <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Asignar VLAN</button>
